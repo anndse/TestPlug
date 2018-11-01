@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TK05Plug_main">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../TK05Plug/out/artifacts/TK05Plug_main_jar/TK05Plug_main.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
