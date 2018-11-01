@@ -1,19 +1,15 @@
 package top.plusy.plugtest;
 
 import net.sf.json.JSONObject;
-import org.omg.CORBA.DynAnyPackage.Invalid;
-import top.plusy.tkxx.TK05Plug;
+import top.plusy.EncodeDecodePlug;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Base64;
 import java.util.Iterator;
-import java.util.Objects;
 
 public class TKXXTools extends JFrame {
     private JPanel contentPane;
@@ -28,7 +24,7 @@ public class TKXXTools extends JFrame {
 
     private Encryption encryption = new Encryption();
 
-    public static String JsonFormat(JSONObject jsonObject)
+    private static String JsonFormat(JSONObject jsonObject)
     {
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -72,7 +68,7 @@ public class TKXXTools extends JFrame {
             String base64String = textArea1.getText().trim();
             if(base64String.length() > 0) {
                 try {
-                    JSONObject jsonObject = TK05Plug.decodeFromBase64(base64String);
+                    JSONObject jsonObject = EncodeDecodePlug.decodeFromBase64(base64String);
                     textArea2.setText(JsonFormat(jsonObject));
                 } catch (Exception ex) {
                     textArea2.setText("输入有误:\n");
@@ -143,6 +139,6 @@ public class TKXXTools extends JFrame {
         dialog.setIconImage(dialog.image);
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
-        dialog.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dialog.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 }
